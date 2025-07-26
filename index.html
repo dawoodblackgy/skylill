@@ -1,500 +1,478 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>نظام الجيم المتكامل - تمارين و تغذية</title>
+    <head>
+        <meta charset="UTF-8">
+<!-- تأكد من وجود viewport صحيح في head -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>نظام الجيم المتكامل - تمارين و تغذية</title>
     <style>
-        /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+       /* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-        }
+/* أضف هذه الأنماط */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
 
-        body {
-            position: relative;
-            overscroll-behavior-y: contain;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-        }
 
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
 
-        header h1 {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            margin-bottom: 0.5rem;
-        }
+/* تحسين التمرير على iOS */
+body {
+    position: relative;
+    overscroll-behavior-y: contain;
+    background-color: #f5f5f5; /* Moved background color here */
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 
-        header p {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            opacity: 0.9;
-        }
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        /* Navigation */
-        nav {
-            background-color: #333;
-            padding: 0.8rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.5rem;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
+header p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    opacity: 0.9;
+}
 
-        nav ul li {
-            margin: 0.3rem 0.5rem;
-        }
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0.8rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            white-space: nowrap;
-        }
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
 
-        nav ul li a:hover, nav ul li a.active {
-            background-color: #1e3c72;
-        }
+nav ul li {
+    margin: 0.3rem 0.5rem;
+}
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            width: 95%;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    white-space: nowrap;
+}
 
-        section {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-        }
+nav ul li a:hover {
+    background-color: #1e3c72;
+}
 
-        h2 {
-            color: #1e3c72;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #eee;
-            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-        }
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 95%;
+}
 
-        h3 {
-            color: #2a5298;
-            margin: 1.5rem 0 1rem;
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
-        }
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 
-        /* Workout Styles */
-        .workout-plan {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
+h2 {
+    color: #1e3c72;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+}
 
-        .day-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+h3 {
+    color: #2a5298;
+    margin: 1.5rem 0 1rem;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+}
 
-        .day-card:hover {
-            transform: translateY(-5px);
-        }
+/* Workout Styles */
+.workout-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
 
-        .day-header {
-            background-color: #2a5298;
-            color: white;
-            padding: 0.8rem;
-            text-align: center;
-            font-weight: bold;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-        }
+.day-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
-        .exercise {
-            padding: 0.8rem;
-            border-bottom: 1px solid #eee;
-        }
+.day-card:hover {
+    transform: translateY(-5px);
+}
 
-        .exercise:last-child {
-            border-bottom: none;
-        }
+.day-header {
+    background-color: #2a5298;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
 
-        .exercise-img {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 0.8rem;
-        }
+.exercise {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
 
-        .exercise-name {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-        }
+.exercise:last-child {
+    border-bottom: none;
+}
 
-        .exercise-details {
-            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
-            color: #666;
-        }
+.exercise-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
 
-        /* Nutrition Styles */
-        .nutrition-plan {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
+.exercise-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
 
-        .meal-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 1.2rem;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
+.exercise-details {
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    color: #666;
+}
 
-        .meal-time {
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-        }
+/* Nutrition Styles */
+.nutrition-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
 
-        .food-item {
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
-        }
+.meal-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
 
-        /* Cardio Styles */
-        .cardio-exercises {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.2rem;
-        }
+.meal-time {
+    font-weight: bold;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
 
-        .cardio-card {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 1.2rem;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
+.meal-time i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
 
-        .cardio-img {
-            width: 100%;
-            height: auto;
-            max-height: 180px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
+.food-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+}
 
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1.2rem;
-            margin-top: 2rem;
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
-        }
+/* Cardio Styles */
+.cardio-exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
 
-        footer p {
-            margin-bottom: 0.5rem;
-        }
+.cardio-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            
-            nav ul li {
-                margin: 0.2rem 0;
-            }
-            
-            .container {
-                padding: 0 0.8rem;
-            }
-            
-            section {
-                padding: 1rem;
-            }
-            
-            .workout-plan, .nutrition-plan, .cardio-exercises {
-                grid-template-columns: 1fr;
-            }
-        }
+.cardio-img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
 
-        @media (max-width: 480px) {
-            header {
-                padding: 1rem;
-            }
-            
-            nav ul li {
-                margin: 0.1rem;
-            }
-            
-            nav ul li a {
-                padding: 0.4rem 0.6rem;
-            }
-            
-            .container {
-                margin: 1rem auto;
-            }
-            
-            .exercise-img, .cardio-img {
-                max-height: 160px;
-            }
-        }
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
 
-        /* Tabs */
-        .tab-content {
-            display: none;
-        }
+footer p {
+    margin-bottom: 0.5rem;
+}
 
-        .tab-content.active {
-            display: block;
-        }
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    nav ul li {
+        margin: 0.2rem 0;
+    }
+    
+    .container {
+        padding: 0 0.8rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    .workout-plan, .nutrition-plan, .cardio-exercises {
+        grid-template-columns: 1fr;
+    }
+}
 
-        /* Progress Tracker */
-        .progress-container {
-            margin: 1.5rem 0;
-        }
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.1rem;
+    }
+    
+    nav ul li a {
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .exercise-img, .cardio-img {
+        max-height: 160px;
+    }
+}
 
-        .progress-bar {
-            height: 30px;
-            background-color: #e0e0e0;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
+/* Tabs */
+.tab-content {
+    display: none;
+}
 
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            width: 0%;
-            transition: width 0.5s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
-        }
+.tab-content.active {
+    display: block;
+}
 
-        /* Tips Section */
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.2rem;
-        }
+/* Progress Tracker */
+.progress-container {
+    margin: 1.5rem 0;
+}
 
-        .tip-card {
-            background-color: #f0f7ff;
-            border-left: 4px solid #2a5298;
-            padding: 1rem;
-            border-radius: 4px;
-        }
+.progress-bar {
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
 
-        .tip-card h3 {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-        }
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    width: 0%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
 
-        .tip-card p {
-            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
-        }
+/* Tips Section */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
 
-        /* Nutrition Days */
-        .nutrition-days {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+.tip-card {
+    background-color: #f0f7ff;
+    border-left: 4px solid #2a5298;
+    padding: 1rem;
+    border-radius: 4px;
+}
 
-        .day-btn {
-            padding: 0.5rem 0.8rem;
-            background-color: #eee;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: clamp(0.8rem, 2.2vw, 0.9rem);
-            white-space: nowrap;
-        }
+.tip-card h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
 
-        .day-btn.active {
-            background-color: #1e3c72;
-            color: white;
-        }
+.tip-card p {
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+}
 
-        .day-btn:hover:not(.active) {
-            background-color: #ddd;
-        }
+/* Nutrition Days */
+.nutrition-days {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
-        /* General Text Elements */
-        p, li {
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
-            line-height: 1.5;
-        }
+.day-btn {
+    padding: 0.5rem 0.8rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    white-space: nowrap;
+}
 
-        ul, ol {
-            padding-right: 1.2rem;
-        }
+.day-btn.active {
+    background-color: #1e3c72;
+    color: white;
+}
 
-        li {
-            margin-bottom: 0.5rem;
-        }
+.day-btn:hover {
+    background-color: #ddd;
+}
 
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: #1e3c72;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            border: none;
-            outline: none;
-        }
+.day-btn.active:hover {
+    background-color: #1e3c72;
+}
 
-        .scroll-to-top.visible {
-            opacity: 0.8;
-            visibility: visible;
-        }
+/* General Text Elements */
+p, li {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: 1.5;
+}
 
-        .scroll-to-top:hover {
-            opacity: 1;
-            background-color: #2a5298;
-        }
+ul, ol {
+    padding-right: 1.2rem;
+}
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+li {
+    margin-bottom: 0.5rem;
+}
+/* أضف هذه الأنماط إلى ملف CSS */
 
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
+/* Smooth scrolling for the whole document */
+html {
+    scroll-behavior: smooth;
+}
 
-        ::-webkit-scrollbar-thumb {
-            background: #1e3c72;
-            border-radius: 4px;
-        }
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #1e3c72;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2a5298;
-        }
+.scroll-to-top.visible {
+    opacity: 0.8;
+    visibility: visible;
+}
 
-        /* Loading animation */
-        .loading {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
+.scroll-to-top:hover {
+    opacity: 1;
+    background-color: #2a5298;
+}
 
-        .loading.active {
-            display: flex;
-        }
+/* Custom scrollbar for better mobile experience */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #1e3c72;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+::-webkit-scrollbar-thumb {
+    background: #1e3c72;
+    border-radius: 4px;
+}
 
-        /* Image loading optimization */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+::-webkit-scrollbar-thumb:hover {
+    background: #2a5298;
+}
 
-        /* Focus styles for accessibility */
-        a:focus, button:focus {
-            outline: 2px solid #1e3c72;
-            outline-offset: 2px;
-        }
+/* Better touch scrolling for mobile */
+body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+}
+/* تحسين أداء التمرير */
+.container, section {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
     </style>
 </head>
 <body>
-    <div class="loading">
-        <div class="spinner"></div>
-    </div>
-
     <header>
         <h1>نظام الجيم المتكامل</h1>
         <p>تمارين قوة ونظام غذائي للوصول إلى بنية عضلية متشرحة وبارزة</p>
@@ -519,32 +497,32 @@
                 <div class="day-card">
                     <div class="day-header">اليوم الأول: الصدر والترايسبس</div>
                     <div class="exercise">
-                        <img src="https://training.fit/wp-content/uploads/2018/11/bankdruecken-flachbank-langhantel.png" alt="بنش بريس" class="exercise-img" loading="lazy">
+                        <img src="https://training.fit/wp-content/uploads/2018/11/bankdruecken-flachbank-langhantel.png" alt="بنش بريس" class="exercise-img">
                         <div class="exercise-name">بنش بريس (Barbell Bench Press)</div>
                         <div class="exercise-details">4 مجموعات × 6-8 تكرار - 90 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://liftmanual.com/wp-content/uploads/2023/04/dumbbell-incline-hammer-press.jpg" alt="إنكلين دمبل بريس" class="exercise-img" loading="lazy">
+                        <img src="https://liftmanual.com/wp-content/uploads/2023/04/dumbbell-incline-hammer-press.jpg" alt="إنكلين دمبل بريس" class="exercise-img">
                         <div class="exercise-name">إنكلين دمبل بريس (Incline Dumbbell Press)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img" loading="lazy">
+                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img">
                         <div class="exercise-name">ديبس (بوزن إضافي) (Weighted Dips)</div>
                         <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/cable-cross-over-resized.png" alt="كابل فلاي" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/cable-cross-over-resized.png" alt="كابل فلاي" class="exercise-img">
                         <div class="exercise-name">كابل فلاي (عالي الصدر) (Cable Fly - High)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://www.fitfatherproject.com/wp-content/uploads/2019/08/Skull-Crusher-exercise-long-image.jpg" alt="سكال كراشر" class="exercise-img" loading="lazy">
+                        <img src="https://www.fitfatherproject.com/wp-content/uploads/2019/08/Skull-Crusher-exercise-long-image.jpg" alt="سكال كراشر" class="exercise-img">
                         <div class="exercise-name">سكال كراشر (باربل) (Skull Crusher)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://trainingstation.co.uk/cdn/shop/articles/Tricep-pushdown-movement_ddb8dbd8-566d-4f55-99e0-36c35790234a_1224x.png?v=1739005533" alt="ترايسبس كابل" class="exercise-img" loading="lazy">
+                        <img src="https://trainingstation.co.uk/cdn/shop/articles/Tricep-pushdown-movement_ddb8dbd8-566d-4f55-99e0-36c35790234a_1224x.png?v=1739005533" alt="ترايسبس كابل" class="exercise-img">
                         <div class="exercise-name">ترايسبس كابل (حبل) (Triceps Cable Pushdown)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
@@ -554,32 +532,32 @@
                 <div class="day-card">
                     <div class="day-header">اليوم الثاني: الظهر والبايسبس</div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Barbell-Deadlift-1.png" alt="ديدليفت" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Barbell-Deadlift-1.png" alt="ديدليفت" class="exercise-img">
                         <div class="exercise-name">ديدليفت (أو رومانيان) (Deadlift)</div>
                         <div class="exercise-details">4 مجموعات × 5-6 تكرار - 120 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/wide-grip-lat-pull-down-resized.png" alt="لات بوليداون" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/wide-grip-lat-pull-down-resized.png" alt="لات بوليداون" class="exercise-img">
                         <div class="exercise-name">لات بوليداون (واسع) (Lat Pulldown - Wide)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://training.fit/wp-content/uploads/2020/02/rudern-tstange-800x448.png" alt="تي بار رو" class="exercise-img" loading="lazy">
+                        <img src="https://training.fit/wp-content/uploads/2020/02/rudern-tstange-800x448.png" alt="تي بار رو" class="exercise-img">
                         <div class="exercise-name">تي بار رو (T-Bar Row)</div>
                         <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Face-pull-resized.png" alt="فيس بول" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Face-pull-resized.png" alt="فيس بول" class="exercise-img">
                         <div class="exercise-name">فيس بول (وجه لوجه) (Face Pull)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/barbell-curl-resized.png" alt="باربل كيرل" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/barbell-curl-resized.png" alt="باربل كيرل" class="exercise-img">
                         <div class="exercise-name">باربل كيرل (Barbell Curl)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/11/Dumbbell-Hammer-Curl-resized.png" alt="هامر كيرل" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/11/Dumbbell-Hammer-Curl-resized.png" alt="هامر كيرل" class="exercise-img">
                         <div class="exercise-name">هامر كيرل (دمبل) (Hammer Curl)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
@@ -589,32 +567,32 @@
                 <div class="day-card">
                     <div class="day-header">اليوم الثالث: الأرجل والأكتاف</div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized-FIXED-2.png" alt="سكوات" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized-FIXED-2.png" alt="سكوات" class="exercise-img">
                         <div class="exercise-name">سكوات (باربل) (Barbell Squat)</div>
                         <div class="exercise-details">5 مجموعات × 5-6 تكرار - 120 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Lunge-resized-fixed.png" alt="لانجز" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Lunge-resized-fixed.png" alt="لانجز" class="exercise-img">
                         <div class="exercise-name">لانجز (دمبل) (Dumbbell Lunges)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار (كل رجل) - 90 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Sled-45-degree-Leg-Press-resized.png" alt="ليغ برس" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Sled-45-degree-Leg-Press-resized.png" alt="ليغ برس" class="exercise-img">
                         <div class="exercise-name">ليغ برس (جهاز) (Leg Press)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Lever-Standing-Calf-Raise-resized.png" alt="كالف رايز" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Lever-Standing-Calf-Raise-resized.png" alt="كالف رايز" class="exercise-img">
                         <div class="exercise-name">كالف رايز (واقف) (Standing Calf Raises)</div>
                         <div class="exercise-details">4 مجموعات × 15-20 تكرار - 30 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Dumbbell-Shoulder-Press-resized.png" alt="أوفرهيد بريس" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Dumbbell-Shoulder-Press-resized.png" alt="أوفرهيد بريس" class="exercise-img">
                         <div class="exercise-name">أوفرهيد بريس (دمبل) (Overhead Dumbbell Press)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/dumbbell-lateral-raise-resized.png" alt="لاتريال رايز" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/dumbbell-lateral-raise-resized.png" alt="لاتريال رايز" class="exercise-img">
                         <div class="exercise-name">لاتريال رايز (جانبي) (Lateral Raises)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
@@ -624,22 +602,22 @@
                 <div class="day-card">
                     <div class="day-header">اليوم الرابع: الأكتاف والترابيز</div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Arnold-press-resized-768x512.png" alt="أرنولد بريس" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Arnold-press-resized-768x512.png" alt="أرنولد بريس" class="exercise-img">
                         <div class="exercise-name">أرنولد بريس (دمبل) (Arnold Press)</div>
                         <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Standing-Alternate-Front-Raise-resized.png" alt="فرونت رايز" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Standing-Alternate-Front-Raise-resized.png" alt="فرونت رايز" class="exercise-img">
                         <div class="exercise-name">فرونت رايز (باربل) (Front Raises)</div>
                         <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img" loading="lazy">
+                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img">
                         <div class="exercise-name">ديبس (بوزن) (Weighted Dips)</div>
                         <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
                     </div>
                     <div class="exercise">
-                        <img src="https://weighttraining.guide/wp-content/uploads/2021/09/Chin-up.png" alt="تشين أب" class="exercise-img" loading="lazy">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2021/09/Chin-up.png" alt="تشين أب" class="exercise-img">
                         <div class="exercise-name">تشين أب (مقاومة) (Chin Ups)</div>
                         <div class="exercise-details">3 مجموعات × أقصى عدد - 45 ثانية راحة</div>
                     </div>
@@ -980,7 +958,7 @@
             
             <div class="cardio-exercises">
                 <div class="cardio-card">
-                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="المشي السريع" class="cardio-img" loading="lazy">
+                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="المشي السريع" class="cardio-img">
                     <h3>المشي السريع</h3>
                     <div class="exercise-details">
                         <p><strong>المدة:</strong> 30-45 دقيقة</p>
@@ -991,7 +969,7 @@
                 </div>
                 
                 <div class="cardio-card">
-                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="الجري المتقطع" class="cardio-img" loading="lazy">
+                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="الجري المتقطع" class="cardio-img">
                     <h3>الجري المتقطع (Interval Running)</h3>
                     <div class="exercise-details">
                         <p><strong>المدة:</strong> 20-30 دقيقة</p>
@@ -1002,7 +980,7 @@
                 </div>
                 
                 <div class="cardio-card">
-                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="نط الحبل" class="cardio-img" loading="lazy">
+                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="نط الحبل" class="cardio-img">
                     <h3>نط الحبل</h3>
                     <div class="exercise-details">
                         <p><strong>المدة:</strong> 10-15 دقيقة (متقطعة)</p>
@@ -1013,7 +991,7 @@
                 </div>
                 
                 <div class="cardio-card">
-                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="الإطالات" class="cardio-img" loading="lazy">
+                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="الإطالات" class="cardio-img">
                     <h3>تمارين الإطالة والمرونة</h3>
                     <div class="exercise-details">
                         <p><strong>المدة:</strong> 15-20 دقيقة</p>
@@ -1108,26 +1086,100 @@
         <p>© sky lill </p>
     </footer>
 
-    <button id="scrollToTop" class="scroll-to-top" aria-label="العودة للأعلى">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-        </svg>
-    </button>
-
+    <!-- أضف هذا قبل نهاية body -->
+<div id="scrollToTop" class="scroll-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+</div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Show loading animation
-            const loading = document.querySelector('.loading');
-            loading.classList.add('active');
-            
-            // Hide loading animation after page is fully loaded
-            window.addEventListener('load', function() {
-                setTimeout(() => {
-                    loading.classList.remove('active');
-                }, 500);
-            });
 
-            // Tab Switching
+        // حل خاص لمشاكل التمرير في Safari
+function fixSafariScrolling() {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (isSafari) {
+        document.body.style.height = '100%';
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.height = '100%';
+        document.documentElement.style.overflow = 'auto';
+    }
+}
+fixSafariScrolling();
+
+        document.addEventListener('DOMContentLoaded', function() {
+        // إزالة أي منع افتراضي قد يعيق التمرير
+        document.body.style.overflow = 'auto';
+        
+        // حل خاص لأجهزة iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            document.body.style.position = 'relative';
+            document.body.style.overflow = 'visible';
+        }
+
+        // التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // زر العودة للأعلى
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // تحسينات التمرير للهواتف
+        let touchStartY = 0;
+        let isScrolling = false;
+        
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+            isScrolling = true;
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', function(e) {
+            if (!isScrolling) return;
+            
+            const touchY = e.touches[0].clientY;
+            const direction = touchY - touchStartY;
+            const atTop = (window.scrollY <= 0);
+            const atBottom = (window.scrollY >= document.body.scrollHeight - window.innerHeight);
+            
+            // منع التمرير الزائد عند الحدود
+            if ((atTop && direction > 0) || (atBottom && direction < 0)) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        document.addEventListener('touchend', function() {
+            isScrolling = false;
+        }, { passive: true });
+    });
+        // Tab Switching
+        document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const dayBtns = document.querySelectorAll('.day-btn');
             
@@ -1148,10 +1200,7 @@
                     document.getElementById(tabId).classList.add('active');
                     
                     // Scroll to top of the section smoothly
-                    document.getElementById(tabId).scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
-                    });
+                    document.getElementById(tabId).scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
             
@@ -1169,7 +1218,7 @@
                 });
             });
             
-            // Progress Tracker
+            // Simple Progress Tracker (Example)
             const progressBars = document.querySelectorAll('.progress');
             if (progressBars.length > 0) {
                 progressBars.forEach(bar => {
@@ -1187,53 +1236,6 @@
                     localStorage.setItem('fitnessProgress', progressValue);
                 });
             }
-            
-            // Scroll to Top Button
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.add('visible');
-                } else {
-                    scrollToTopBtn.classList.remove('visible');
-                }
-            });
-            
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Fix for Safari scrolling issues
-            function fixSafariScrolling() {
-                const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                if (isSafari) {
-                    document.body.style.height = '100%';
-                    document.body.style.overflow = 'auto';
-                    document.documentElement.style.height = '100%';
-                    document.documentElement.style.overflow = 'auto';
-                }
-            }
-            fixSafariScrolling();
             
             // Handle window resize
             function handleResize() {
@@ -1261,33 +1263,87 @@
                 }
                 lastTouchEnd = now;
             }, false);
-            
-            // Lazy load images
-            if ('loading' in HTMLImageElement.prototype) {
-                // Native lazy loading is supported
-                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-                lazyImages.forEach(img => {
-                    img.src = img.dataset.src;
-                });
-            } else {
-                // Fallback for browsers that don't support native lazy loading
-                const lazyLoadImages = document.querySelectorAll('img[loading="lazy"]');
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // ... الكود الحالي ...
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.src = img.dataset.src;
-                            observer.unobserve(img);
-                        }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                });
-                
-                lazyLoadImages.forEach(img => {
-                    imageObserver.observe(img);
-                });
+                }
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
             }
         });
+        
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Better touch scrolling for mobile
+        let touchStartY = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', function(e) {
+            const touchY = e.touches[0].clientY;
+            const direction = touchY - touchStartY;
+            
+            // Prevent rubber-band effect on iOS
+            if (window.scrollY === 0 && direction > 0) {
+                e.preventDefault();
+            }
+            
+            // Prevent scroll when at bottom
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            if (window.scrollY === maxScroll && direction < 0) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Inertia scrolling for smoother experience
+        let lastScrollPosition = 0;
+        let ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            lastScrollPosition = window.scrollY;
+            
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    // You can add custom scroll effects here if needed
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    });
     </script>
+    
 </body>
 </html>
