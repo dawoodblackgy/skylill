@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>نظام الجيم المتكامل - تمارين و تغذية</title>
+    <style>
+       /* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 0.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0.3rem 0.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+    background-color: #1e3c72;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 95%;
+}
+
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: #1e3c72;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+}
+
+h3 {
+    color: #2a5298;
+    margin: 1.5rem 0 1rem;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+}
+
+/* Workout Styles */
+.workout-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.day-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+}
+
+.day-header {
+    background-color: #2a5298;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.exercise {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.exercise:last-child {
+    border-bottom: none;
+}
+
+.exercise-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.exercise-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.exercise-details {
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    color: #666;
+}
+
+/* Nutrition Styles */
+.nutrition-plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.meal-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meal-time {
+    font-weight: bold;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.meal-time i {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.food-item {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+}
+
+/* Cardio Styles */
+.cardio-exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+.cardio-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardio-img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    nav ul li {
+        margin: 0.2rem 0;
+    }
+    
+    .container {
+        padding: 0 0.8rem;
+    }
+    
+    section {
+        padding: 1rem;
+    }
+    
+    .workout-plan, .nutrition-plan, .cardio-exercises {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.1rem;
+    }
+    
+    nav ul li a {
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .exercise-img, .cardio-img {
+        max-height: 160px;
+    }
+}
+
+/* Tabs */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Progress Tracker */
+.progress-container {
+    margin: 1.5rem 0;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    width: 0%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+/* Tips Section */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+.tip-card {
+    background-color: #f0f7ff;
+    border-left: 4px solid #2a5298;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.tip-card h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.tip-card p {
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+}
+
+/* Nutrition Days */
+.nutrition-days {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.day-btn {
+    padding: 0.5rem 0.8rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    white-space: nowrap;
+}
+
+.day-btn.active {
+    background-color: #1e3c72;
+    color: white;
+}
+
+.day-btn:hover {
+    background-color: #ddd;
+}
+
+.day-btn.active:hover {
+    background-color: #1e3c72;
+}
+
+/* General Text Elements */
+p, li {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: 1.5;
+}
+
+ul, ol {
+    padding-right: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>نظام الجيم المتكامل</h1>
+        <p>تمارين قوة ونظام غذائي للوصول إلى بنية عضلية متشرحة وبارزة</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#workout" class="nav-link active" data-tab="workout">التمارين</a></li>
+            <li><a href="#nutrition" class="nav-link" data-tab="nutrition">التغذية</a></li>
+            <li><a href="#cardio" class="nav-link" data-tab="cardio">الكارديو</a></li>
+            <li><a href="#tips" class="nav-link" data-tab="tips">نصائح</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="workout" class="tab-content active">
+            <h2>برنامج التمارين (4 أيام)</h2>
+            <p>هذا البرنامج يركز على تمرين عضلتين رئيسيتين في اليوم مع تمارين مساعدة لتحقيق التشرح والبروز العضلي.</p>
+            
+            <div class="workout-plan">
+                <!-- Day 1 -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الأول: الصدر والترايسبس</div>
+                    <div class="exercise">
+                        <img src="https://training.fit/wp-content/uploads/2018/11/bankdruecken-flachbank-langhantel.png" alt="بنش بريس" class="exercise-img">
+                        <div class="exercise-name">بنش بريس (Barbell Bench Press)</div>
+                        <div class="exercise-details">4 مجموعات × 6-8 تكرار - 90 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://liftmanual.com/wp-content/uploads/2023/04/dumbbell-incline-hammer-press.jpg" alt="إنكلين دمبل بريس" class="exercise-img">
+                        <div class="exercise-name">إنكلين دمبل بريس (Incline Dumbbell Press)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img">
+                        <div class="exercise-name">ديبس (بوزن إضافي) (Weighted Dips)</div>
+                        <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/cable-cross-over-resized.png" alt="كابل فلاي" class="exercise-img">
+                        <div class="exercise-name">كابل فلاي (عالي الصدر) (Cable Fly - High)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://www.fitfatherproject.com/wp-content/uploads/2019/08/Skull-Crusher-exercise-long-image.jpg" alt="سكال كراشر" class="exercise-img">
+                        <div class="exercise-name">سكال كراشر (باربل) (Skull Crusher)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://trainingstation.co.uk/cdn/shop/articles/Tricep-pushdown-movement_ddb8dbd8-566d-4f55-99e0-36c35790234a_1224x.png?v=1739005533" alt="ترايسبس كابل" class="exercise-img">
+                        <div class="exercise-name">ترايسبس كابل (حبل) (Triceps Cable Pushdown)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثاني: الظهر والبايسبس</div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Barbell-Deadlift-1.png" alt="ديدليفت" class="exercise-img">
+                        <div class="exercise-name">ديدليفت (أو رومانيان) (Deadlift)</div>
+                        <div class="exercise-details">4 مجموعات × 5-6 تكرار - 120 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/wide-grip-lat-pull-down-resized.png" alt="لات بوليداون" class="exercise-img">
+                        <div class="exercise-name">لات بوليداون (واسع) (Lat Pulldown - Wide)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://training.fit/wp-content/uploads/2020/02/rudern-tstange-800x448.png" alt="تي بار رو" class="exercise-img">
+                        <div class="exercise-name">تي بار رو (T-Bar Row)</div>
+                        <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Face-pull-resized.png" alt="فيس بول" class="exercise-img">
+                        <div class="exercise-name">فيس بول (وجه لوجه) (Face Pull)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/barbell-curl-resized.png" alt="باربل كيرل" class="exercise-img">
+                        <div class="exercise-name">باربل كيرل (Barbell Curl)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/11/Dumbbell-Hammer-Curl-resized.png" alt="هامر كيرل" class="exercise-img">
+                        <div class="exercise-name">هامر كيرل (دمبل) (Hammer Curl)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الثالث: الأرجل والأكتاف</div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized-FIXED-2.png" alt="سكوات" class="exercise-img">
+                        <div class="exercise-name">سكوات (باربل) (Barbell Squat)</div>
+                        <div class="exercise-details">5 مجموعات × 5-6 تكرار - 120 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Lunge-resized-fixed.png" alt="لانجز" class="exercise-img">
+                        <div class="exercise-name">لانجز (دمبل) (Dumbbell Lunges)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار (كل رجل) - 90 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Sled-45-degree-Leg-Press-resized.png" alt="ليغ برس" class="exercise-img">
+                        <div class="exercise-name">ليغ برس (جهاز) (Leg Press)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Lever-Standing-Calf-Raise-resized.png" alt="كالف رايز" class="exercise-img">
+                        <div class="exercise-name">كالف رايز (واقف) (Standing Calf Raises)</div>
+                        <div class="exercise-details">4 مجموعات × 15-20 تكرار - 30 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/Dumbbell-Shoulder-Press-resized.png" alt="أوفرهيد بريس" class="exercise-img">
+                        <div class="exercise-name">أوفرهيد بريس (دمبل) (Overhead Dumbbell Press)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 75 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/05/dumbbell-lateral-raise-resized.png" alt="لاتريال رايز" class="exercise-img">
+                        <div class="exercise-name">لاتريال رايز (جانبي) (Lateral Raises)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                </div>
+                
+                <!-- Day 4 -->
+                <div class="day-card">
+                    <div class="day-header">اليوم الرابع: الأكتاف والترابيز</div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Arnold-press-resized-768x512.png" alt="أرنولد بريس" class="exercise-img">
+                        <div class="exercise-name">أرنولد بريس (دمبل) (Arnold Press)</div>
+                        <div class="exercise-details">4 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2016/10/Dumbbell-Standing-Alternate-Front-Raise-resized.png" alt="فرونت رايز" class="exercise-img">
+                        <div class="exercise-name">فرونت رايز (باربل) (Front Raises)</div>
+                        <div class="exercise-details">3 مجموعات × 10-12 تكرار - 45 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/17551101-Weighted-Tricep-Dips_Upper-Arms_small.jpg" alt="ديبس" class="exercise-img">
+                        <div class="exercise-name">ديبس (بوزن) (Weighted Dips)</div>
+                        <div class="exercise-details">3 مجموعات × 8-10 تكرار - 60 ثانية راحة</div>
+                    </div>
+                    <div class="exercise">
+                        <img src="https://weighttraining.guide/wp-content/uploads/2021/09/Chin-up.png" alt="تشين أب" class="exercise-img">
+                        <div class="exercise-name">تشين أب (مقاومة) (Chin Ups)</div>
+                        <div class="exercise-details">3 مجموعات × أقصى عدد - 45 ثانية راحة</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nutrition Section -->
+        <section id="nutrition" class="tab-content">
+            <h2>النظام الغذائي المتكامل</h2>
+            <p>نظام غذائي متوازن بين البروتين والكربوهيدرات والدهون الصحية مع أيام اقتصادية لتناسب الجميع</p>
+            
+            <div class="nutrition-days">
+                <button class="day-btn active" data-day="day1">اليوم الأول (بروتين)</button>
+                <button class="day-btn" data-day="day2">اليوم الثاني (اقتصادي)</button>
+                <button class="day-btn" data-day="day3">اليوم الثالث (بروتين)</button>
+                <button class="day-btn" data-day="day4">اليوم الرابع (اقتصادي)</button>
+            </div>
+            
+            <div id="day1" class="nutrition-day active">
+                <h3>اليوم الأول - وجبات عالية البروتين</h3>
+                <div class="nutrition-plan">
+                    <div class="meal-card">
+                        <div class="meal-time">الإفطار</div>
+                        <div class="food-item">
+                            <span>3 بيضات كاملة + 2 بياض</span>
+                            <span>300 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>شريحة خبز قمح كامل</span>
+                            <span>80 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حبة أفوكادو صغيرة</span>
+                            <span>120 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة خفيفة</div>
+                        <div class="food-item">
+                            <span>كوب زبادي يوناني</span>
+                            <span>150 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حفنة لوز (20 حبة)</span>
+                            <span>140 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">الغداء</div>
+                        <div class="food-item">
+                            <span>200 جرام صدر دجاج مشوي</span>
+                            <span>330 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>كوب أرز بني</span>
+                            <span>220 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>سلطة خضراء بزيت الزيتون</span>
+                            <span>100 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة ما بعد التمرين</div>
+                        <div class="food-item">
+                            <span>شيك بروتين (30 جم)</span>
+                            <span>120 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>موزة</span>
+                            <span>105 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">العشاء</div>
+                        <div class="food-item">
+                            <span>200 جرام سمك مشوي</span>
+                            <span>280 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>كوب بروكلي مطهو على البخار</span>
+                            <span>55 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>ملعقة زيت زيتون</span>
+                            <span>120 سعرة</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; font-weight: bold;">إجمالي السعرات: ~2000 سعرة</p>
+            </div>
+            
+            <div id="day2" class="nutrition-day">
+                <h3>اليوم الثاني - وجبات اقتصادية</h3>
+                <div class="nutrition-plan">
+                    <div class="meal-card">
+                        <div class="meal-time">الإفطار</div>
+                        <div class="food-item">
+                            <span>كوب شوفان مع حليب</span>
+                            <span>300 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>ملعقة عسل</span>
+                            <span>60 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حبة موز</span>
+                            <span>105 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة خفيفة</div>
+                        <div class="food-item">
+                            <span>شريحتان خبز توست</span>
+                            <span>160 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>2 ملعقة كبيرة جبنة قريش</span>
+                            <span>100 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">الغداء</div>
+                        <div class="food-item">
+                            <span>كوب عدس مطبوخ</span>
+                            <span>230 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>رغيف خبز بلدي صغير</span>
+                            <span>150 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>سلطة خضراء</span>
+                            <span>50 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة ما بعد التمرين</div>
+                        <div class="food-item">
+                            <span>كوب حليب + موزة</span>
+                            <span>250 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">العشاء</div>
+                        <div class="food-item">
+                            <span>3 بيضات مسلوقة</span>
+                            <span>210 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>خضار سوتيه</span>
+                            <span>100 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>شريحة جبنة قريش</span>
+                            <span>80 سعرة</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; font-weight: bold;">إجمالي السعرات: ~1800 سعرة</p>
+            </div>
+            
+            <div id="day3" class="nutrition-day">
+                <h3>اليوم الثالث - وجبات عالية البروتين</h3>
+                <div class="nutrition-plan">
+                    <div class="meal-card">
+                        <div class="meal-time">الإفطار</div>
+                        <div class="food-item">
+                            <span>عجة 3 بيضات مع جبنة فيتا</span>
+                            <span>350 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>شريحة توست كامل</span>
+                            <span>80 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حبة طماطم</span>
+                            <span>25 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة خفيفة</div>
+                        <div class="food-item">
+                            <span>كوب زبادي يوناني مع ملعقة عسل</span>
+                            <span>200 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">الغداء</div>
+                        <div class="food-item">
+                            <span>250 جرام لحم بقري مشوي</span>
+                            <span>400 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>كوب بطاطا حلوة مشوية</span>
+                            <span>180 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>سلطة خضراء</span>
+                            <span>50 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة ما بعد التمرين</div>
+                        <div class="food-item">
+                            <span>شيك بروتين (30 جم)</span>
+                            <span>120 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حبة تفاح</span>
+                            <span>95 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">العشاء</div>
+                        <div class="food-item">
+                            <span>200 جرام تونة مصفاة</span>
+                            <span>220 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>كوب بروكلي مطهو</span>
+                            <span>55 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>ملعقة زيت زيتون</span>
+                            <span>120 سعرة</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; font-weight: bold;">إجمالي السعرات: ~1900 سعرة</p>
+            </div>
+            
+            <div id="day4" class="nutrition-day">
+                <h3>اليوم الرابع - وجبات اقتصادية</h3>
+                <div class="nutrition-plan">
+                    <div class="meal-card">
+                        <div class="meal-time">الإفطار</div>
+                        <div class="food-item">
+                            <span>كوب فول مدمس بزيت الزيتون</span>
+                            <span>300 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>رغيف خبز بلدي صغير</span>
+                            <span>150 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>خضار طازج</span>
+                            <span>30 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة خفيفة</div>
+                        <div class="food-item">
+                            <span>كوب لبن زبادي</span>
+                            <span>150 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>حفنة من الفواكه المجففة</span>
+                            <span>100 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">الغداء</div>
+                        <div class="food-item">
+                            <span>كوب فاصوليا بيضاء مطبوخة</span>
+                            <span>250 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>كوب أرز أبيض</span>
+                            <span>200 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>سلطة خضراء</span>
+                            <span>50 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">وجبة ما بعد التمرين</div>
+                        <div class="food-item">
+                            <span>بيضتان مسلوقتان</span>
+                            <span>140 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>شريحة خبز</span>
+                            <span>80 سعرة</span>
+                        </div>
+                    </div>
+                    
+                    <div class="meal-card">
+                        <div class="meal-time">العشاء</div>
+                        <div class="food-item">
+                            <span>كوب جبنة قريش</span>
+                            <span>160 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>خضار سوتيه</span>
+                            <span>100 سعرة</span>
+                        </div>
+                        <div class="food-item">
+                            <span>ملعقة زيت زيتون</span>
+                            <span>120 سعرة</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; text-align: center; font-weight: bold;">إجمالي السعرات: ~1800 سعرة</p>
+            </div>
+            
+            <div class="progress-container">
+                <h3>تتبع التقدم</h3>
+                <p>تتبع تقدمك في زيادة الوزن والعضلات:</p>
+                <div class="progress-bar">
+                    <div class="progress">0%</div>
+                </div>
+                <p>الوزن الحالي: 65 كجم - الهدف: 75 كجم (عضلات مشرحة)</p>
+            </div>
+        </section>
+        
+        <!-- Cardio Section -->
+        <section id="cardio" class="tab-content">
+            <h2>تمارين الكارديو والإطالات</h2>
+            <p>تمارين الكارديو المختارة لحرق الدهون وتحسين اللياقة مع الحفاظ على الكتلة العضلية</p>
+            
+            <div class="cardio-exercises">
+                <div class="cardio-card">
+                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="المشي السريع" class="cardio-img">
+                    <h3>المشي السريع</h3>
+                    <div class="exercise-details">
+                        <p><strong>المدة:</strong> 30-45 دقيقة</p>
+                        <p><strong>الشدة:</strong> متوسطة (يمكن التحدث ولكن بصعوبة)</p>
+                        <p><strong>التكرار:</strong> 3-4 مرات أسبوعياً</p>
+                        <p><strong>الفائدة:</strong> حرق دهون بدون التأثير على العضلات، تحسين الدورة الدموية</p>
+                    </div>
+                </div>
+                
+                <div class="cardio-card">
+                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="الجري المتقطع" class="cardio-img">
+                    <h3>الجري المتقطع (Interval Running)</h3>
+                    <div class="exercise-details">
+                        <p><strong>المدة:</strong> 20-30 دقيقة</p>
+                        <p><strong>الشدة:</strong> عالية (30 ثانية جري سريع + 1 دقيقة مشي)</p>
+                        <p><strong>التكرار:</strong> 2-3 مرات أسبوعياً</p>
+                        <p><strong>الفائدة:</strong> حرق سعرات عالي في وقت قصير، تحسين اللياقة القلبية</p>
+                    </div>
+                </div>
+                
+                <div class="cardio-card">
+                    <img src="https://www.verywellfit.com/thmb/5Jf-mXW4Q0Q6L8LZ0vQ5jJ5Q5Y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-520604833-5a2d8c4fa474be0036b0c7e5.jpg" alt="نط الحبل" class="cardio-img">
+                    <h3>نط الحبل</h3>
+                    <div class="exercise-details">
+                        <p><strong>المدة:</strong> 10-15 دقيقة (متقطعة)</p>
+                        <p><strong>الشدة:</strong> عالية</p>
+                        <p><strong>التكرار:</strong> 3 مرات أسبوعياً</p>
+                        <p><strong>الفائدة:</strong> تحسين التنسيق العضلي العصبي، حرق سريع للدهون</p>
+                    </div>
+                </div>
+                
+                <div class="cardio-card">
+                    <img src="https://www.verywellfit.com/thmb/3HJ5hZPjW0s4Qkq8-3JkQ6Q1ZzY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-637722094-5b61d940c9e77c0054b3c8d0.jpg" alt="الإطالات" class="cardio-img">
+                    <h3>تمارين الإطالة والمرونة</h3>
+                    <div class="exercise-details">
+                        <p><strong>المدة:</strong> 15-20 دقيقة</p>
+                        <p><strong>الشدة:</strong> منخفضة</p>
+                        <p><strong>التكرار:</strong> يومياً (خاصة بعد التمرين)</p>
+                        <p><strong>الفائدة:</strong> تحسين المرونة، منع الإصابات، استرخاء العضلات</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <h3>برنامج الكارديو الأسبوعي المقترح</h3>
+                <ul style="margin-top: 1rem; padding-right: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>اليوم 1:</strong> مشي سريع 45 دقيقة (صباحاً)</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>اليوم 3:</strong> جري متقطع 20 دقيقة + إطالات 15 دقيقة</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>اليوم 5:</strong> نط الحبل 10 دقائق (3 جولات) + مشي 30 دقيقة</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>اليوم 7:</strong> إطالات كاملة للجسم 20 دقيقة</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>ملاحظة:</strong> يمكن تعديل البرنامج حسب مستوى اللياقة، يفضل عمل الكارديو في أيام الراحة من تمارين الحديد أو في أوقات مختلفة من اليوم.</p>
+            </div>
+        </section>
+        
+        <!-- Tips Section -->
+        <section id="tips" class="tab-content">
+            <h2>نصائح لبناء العضلات وتشرحها</h2>
+            <p>مجموعة من النصائح العملية لتحقيق أفضل النتائج في بناء العضلات وبروزها مع الحفاظ على صحة الجسم</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>التقدم في الأوزان</h3>
+                    <p>احرص على زيادة الأوزان تدريجياً كل أسبوعين، فالعضلات تنمو عندما تتعرض لضغط أكبر مما اعتادت عليه.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>النوم الكافي</h3>
+                    <p>7-8 ساعات نوم يومياً ضرورية لاستشفاء العضلات، حيث يتم إفراز هرمون النمو خلال النوم العميق.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>شرب الماء</h3>
+                    <p>3 لتر ماء يومياً على الأقل، فالجفاف يؤثر على الأداء ويمنع التشرح العضلي.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>التنوع في التمارين</h3>
+                    <p>غير في تمارينك كل 6-8 أسابيع لتحفيز العضلات بطرق مختلفة ومنع التكيف.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>التقنية أولاً</h3>
+                    <p>التركيز على التنفيذ الصحيح للتمارين أهم من زيادة الأوزان، لتجنب الإصابات ولضمان استهداف العضلة الصحيحة.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>البروتين الكافي</h3>
+                    <p>1.6-2 جرام بروتين لكل كجم من وزنك يومياً، موزعة على 4-5 وجبات لضمان الامتصاص الأمثل.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>الكارديو المعتدل</h3>
+                    <p>لا تبالغ في الكارديو لتحافظ على كتلتك العضلية، 3-4 جلسات أسبوعياً تكفي لحرق الدهون.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>الصبر والمثابرة</h3>
+                    <p>بناء العضلات عملية طويلة تحتاج 3-6 أشهر لرؤية نتائج واضحة، فلا تستعجل النتائج.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <h3>نصائح خاصة للتشرح العضلي</h3>
+                <ul style="margin-top: 1rem; padding-right: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;">قلل من الصوديوم (الملح) لتقليل احتباس الماء تحت الجلد.</li>
+                    <li style="margin-bottom: 0.5rem;">اشرب الشاي الأخضر أو القهوة قبل الكارديو لتعزيز حرق الدهون.</li>
+                    <li style="margin-bottom: 0.5rem;">ركز على التكرارات العالية (12-15) في آخر أسبوعين قبل المنافسة لزيادة التشرح.</li>
+                    <li style="margin-bottom: 0.5rem;">استخدم تمارين العزل (بدون أجهزة) في نهاية التمرين لضخ الدم في العضلة.</li>
+                    <li style="margin-bottom: 0.5rem;">احرص على تناول الدهون الصحية (أفوكادو، زيت زيتون، مكسرات) لدورها في إنتاج الهرمونات.</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 2rem; background-color: #f0f7ff; padding: 1.5rem; border-radius: 8px;">
+                <h3 style="color: #1e3c72;">خطة زيادة الوزن من 65 إلى 75 كجم</h3>
+                <p style="margin-top: 1rem;"><strong>المرحلة الأولى (شهرين):</strong> زيادة السعرات بنسبة 10% مع التركيز على تمارين القوة الأساسية.</p>
+                <p><strong>المرحلة الثانية (شهرين):</strong> زيادة السعرات بنسبة 5% إضافية مع إدخال تمارين العزل.</p>
+                <p><strong>المرحلة الثالثة (شهرين):</strong> ثبات السعرات مع زيادة كثافة التمارين وبدء الكارديو لحرق الدهون.</p>
+                <p style="margin-top: 1rem; font-weight: bold;">الهدف: زيادة 1-1.5 كجم شهرياً، معظمها من العضلات.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© sky lill </p>
+    </footer>
+    
+    <script>
+        // Tab Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const dayBtns = document.querySelectorAll('.day-btn');
+            
+            // Tab navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and tabs
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked link and corresponding tab
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Scroll to top of the section smoothly
+                    document.getElementById(tabId).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Nutrition days switching
+            dayBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    dayBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.nutrition-day').forEach(day => {
+                        day.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    const dayId = this.getAttribute('data-day');
+                    document.getElementById(dayId).classList.add('active');
+                });
+            });
+            
+            // Simple Progress Tracker (Example)
+            const progressBars = document.querySelectorAll('.progress');
+            if (progressBars.length > 0) {
+                progressBars.forEach(bar => {
+                    // Get progress from localStorage or set random value
+                    let savedProgress = localStorage.getItem('fitnessProgress');
+                    let progressValue = savedProgress ? parseInt(savedProgress) : Math.floor(Math.random() * 30) + 10;
+                    
+                    // Ensure progress doesn't exceed 100%
+                    progressValue = Math.min(progressValue, 100);
+                    
+                    bar.style.width = progressValue + '%';
+                    bar.textContent = progressValue + '%';
+                    
+                    // Save to localStorage
+                    localStorage.setItem('fitnessProgress', progressValue);
+                });
+            }
+            
+            // Handle window resize
+            function handleResize() {
+                // Adjust font sizes or other elements if needed
+                const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+                
+                // You can add specific adjustments here if needed
+            }
+            
+            // Initial call and event listener
+            handleResize();
+            window.addEventListener('resize', handleResize);
+            
+            // Prevent zooming on mobile devices
+            document.addEventListener('touchmove', function(e) {
+                if (e.scale !== 1) { e.preventDefault(); }
+            }, { passive: false });
+            
+            // Disable double tap to zoom
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+        });
+    </script>
+</body>
+</html>
